@@ -4,15 +4,15 @@ use std::env;
 use rand::Rng;
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let quote = get_quote();
     if !args.is_empty() {
-        let option = &args[1];
-        if option == "-q" {
+        let option = &args[0];
+        if option.eq(&String::from("-q")){
             println!("<  {quote}  >");
             return;
         }
     }
 
-    let quote = get_quote();
     let quote_len = quote.chars().count();
     print!("  ");
     for _ in 0..quote_len + 1 {
