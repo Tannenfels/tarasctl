@@ -5,10 +5,10 @@ use rand::Rng;
 fn main() {
     let args: Vec<String> = env::args().collect();
     let quote = get_quote();
-    if !args.is_empty() {
-        let option = &args[0];
-        if option.eq(&String::from("-q")){
-            println!("<  {quote}  >");
+    let option = args.get(1);
+    if option != None {
+        if option.unwrap() == "-q"{
+            println!("{quote}");
             return;
         }
     }
