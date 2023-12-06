@@ -24,6 +24,7 @@ fn main() {
     for _ in 0..quote_len + 1 {
         print!("-")
     }
+    println!();
 
     render_taras();
 }
